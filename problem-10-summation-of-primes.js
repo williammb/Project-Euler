@@ -1,22 +1,22 @@
 function primeSummation(n) {
-  let isPrime = new Array(n).fill(true);
-  let sumPrime = 0;
+    let isPrime = new Array(n).fill(true);
+    let sumPrime = 0;
 
-  for (var i = 2; i < Math.sqrt(n); i++) {
-    for (var j = i*i; j < n; j += i) {
-      if (isPrime[i]) {
-        isPrime[j] = false
-      }
+    for (var i = 2; i < Math.sqrt(n); i++) {
+        for (var j = i * i; j < n; j += i) {
+            if (isPrime[i]) {
+                isPrime[j] = false
+            }
+        }
     }
-  }
 
-  for (var i = 2; i < n; i++) {
-    if(isPrime[i] === true) {
-      sumPrime = sumPrime + i;
+    for (var i = 2; i < n; i++) {
+        if (isPrime[i] === true) {
+            sumPrime = sumPrime + i;
+        }
     }
-  }
 
-  return sumPrime;
+    return sumPrime;
 }
 
 console.log(primeSummation(17));
